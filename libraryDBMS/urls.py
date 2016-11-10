@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from libraryDBMS.views import current_datetime
+from libraryDBMS.views import hoursAhed
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),url(r'^now/$',current_datetime),url(r'^timeplus(\-?\d{1,2})hours/$',hoursAhed),
 ]
